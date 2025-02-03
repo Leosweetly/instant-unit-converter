@@ -5,7 +5,7 @@ export const metadata = {
   };
   
 
-  import Converter from "@/components/Converter";
+  import Converter from '../../components/Converter';
 
   export default function LengthConverter() {
     return (
