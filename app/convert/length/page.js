@@ -4,7 +4,7 @@ export const metadata = {
     keywords: "length converter, meter to kilometer, miles to feet, convert length units",
   };
   
-  import Converter from "@/components/Converter";
+  import Converter from "@/Components/Converter";
   
   export default function LengthConverter() {
     return (
