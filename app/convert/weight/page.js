@@ -4,7 +4,7 @@ export const metadata = {
     keywords: "weight converter, kilogram to pound, grams to ounces, convert weight units",
   };
   
-  import Converter from "@/Components/Converter";
+  import Converter from "@/components/Converter";
   
   export default function WeightConverter() {
     return (

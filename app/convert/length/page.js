@@ -4,13 +4,9 @@ export const metadata = {
     keywords: "length converter, meter to kilometer, miles to feet, convert length units",
   };
   
-<<<<<<< HEAD
-  import Converter from "@/Components/Converter";
-  
-=======
+
   import Converter from "@/components/Converter";
 
->>>>>>> 05e6f51 (Fix: Corrected case sensitivity issue with Components folder)
   export default function LengthConverter() {
     return (
       <main className="flex flex-col items-center justify-center min-h-screen p-4">
