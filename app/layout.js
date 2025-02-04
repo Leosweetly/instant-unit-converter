@@ -1,44 +1,70 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata = {
-  title: "Unit Converter | Fast & Accurate Conversions",
-  description: "The most beautifully designed unit converter with instant, accurate conversions for length, weight, temperature, and more.",
-  keywords: "unit converter, length converter, weight converter, temperature converter, online calculator, metric to imperial, convert units",
+  title: "Instant Unit Converter | Convert Length, Weight, Volume & More",
+  description: "Convert length, weight, temperature, and more with this instant, user-friendly unit converter.",
+  keywords: [
+    "unit converter",
+    "length converter",
+    "weight converter",
+    "temperature converter",
+    "metric to imperial",
+    "online calculator",
+    "convert units"
+  ],
   openGraph: {
-    title: "Unit Converter | Fast & Accurate Conversions",
-    description: "Convert units instantly with the best-designed unit converter online.",
-    url: "https://yourdomain.com",
-    siteName: "Unit Converter",
+    title: "Instant Unit Converter - Fast & Accurate Conversions",
+    description: "Convert length, weight, temperature, and more instantly with our beautifully designed unit converter.",
+    url: "https://instantunitconverter.com",
+    type: "website",
     images: [
       {
-        url: "https://yourdomain.com/preview-image.png",
+        url: "https://instantunitconverter.com/og-image.jpg",
         width: 1200,
         height: 630,
-      },
-    ],
-    type: "website",
+        alt: "Instant Unit Converter Preview"
+      }
+    ]
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Instant Unit Converter - Convert Any Unit Instantly",
+    description: "The fastest and most accurate unit converter for length, weight, volume, temperature, and more.",
+    images: ["https://instantunitconverter.com/og-image.jpg"]
+  }
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Instant Unit Converter",
+              "url": "https://instantunitconverter.com",
+              "description": "Convert length, weight, temperature, and more with this instant, user-friendly unit converter.",
+              "image": "https://instantunitconverter.com/og-image.jpg",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Instant Unit Converter",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://instantunitconverter.com/logo.png"
+                }
+              },
+              "mainEntity": {
+                "@type": "Calculator",
+                "name": "Unit Converter",
+                "url": "https://instantunitconverter.com",
+                "about": "Online calculator for converting length, weight, temperature, and more."
+              }
+            })
+          }}
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
-};
+}
