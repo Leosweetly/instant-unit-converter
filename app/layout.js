@@ -32,6 +32,8 @@ export const metadata = {
   }
 };
 
+import ThemeSwitcher from "@/app/components/ThemeSwitcher";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -53,18 +55,17 @@ export default function RootLayout({ children }) {
                   "@type": "ImageObject",
                   "url": "https://instantunitconverter.com/logo.png"
                 }
-              },
-              "mainEntity": {
-                "@type": "Calculator",
-                "name": "Unit Converter",
-                "url": "https://instantunitconverter.com",
-                "about": "Online calculator for converting length, weight, temperature, and more."
               }
             })
           }}
         />
       </head>
-      <body>{children}</body>
+      <body className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          <ThemeSwitcher />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

@@ -1,21 +1,94 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Light Mode (Default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-color: #f4f4f4;
+  --text-color: #1a1a1a;
+  --primary-color: #16a34a; /* Green */
+  --secondary-color: #22c55e;
+  --border-color: #16a34a;
+  --input-bg: #ffffff;
+  --input-text: #1a1a1a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark Mode */
+.dark {
+  --background-color: #0f172a; /* Dark Navy */
+  --text-color: #d1fae5;
+  --primary-color: #16a34a;
+  --secondary-color: #22c55e;
+  --border-color: #16a34a;
+  --input-bg: #1e293b;
+  --input-text: #d1fae5;
 }
 
+/* Body */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Select + Input */
+input, select {
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 10px;
+  appearance: none;
+}
+
+/* Convert Button */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--secondary-color);
 }
